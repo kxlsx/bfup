@@ -1,0 +1,43 @@
+[package]
+name = "bfup"
+version = "0.1.0"
+edition = "2021"
+authors = ["Łukasz Dragon <lukasz.b.dragon@gmail.com>"]
+license = "GPL-3.0-only"
+readme = "README.md"
+repository = "https://github.com/kxlsx/bfup/"
+categories = ["command-line-utilities", "compilers"]
+keywords = ["brainfuck", "preprocessor"]
+description = "Preprocessor for brainfuck-like languages"
+
+exclude = ["examples/*"]
+
+[lib]
+name = "bfup_derive"
+path = "src/derive.rs"
+proc-macro = true
+
+[dependencies]
+clap = { version = "4.1", features = ["derive"] }
+colored = "2.0"
+utf8-chars = "2.0"
+thiserror = "1.0"
+anyhow = "1.0"
+paste = "1.0"
+serde = "1.0"
+ron = "0.8"
+
+# bfup_derive stuff
+syn = { version = "1.0", features = ["full"] }
+quote = "1.0"
+proc-macro2 = "1.0"
+proc-macro-error = "1.0"
+function_name = "0.3"
+
+[profile.release]
+debug = false
+opt-level = 3
+lto = true
+strip = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
