@@ -1,6 +1,6 @@
 [package]
 name = "bfup"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Łukasz Dragon <lukasz.b.dragon@gmail.com>"]
 license = "GPL-3.0-only"
@@ -20,15 +20,15 @@ proc-macro = true
 [dependencies]
 clap = { version = "4.1", features = ["derive"] }
 colored = "2.0"
-utf8-chars = "2.0"
+utf8-chars = "3.0.1"
 thiserror = "1.0"
 anyhow = "1.0"
 paste = "1.0"
-serde = "1.0"
+serde = { version = "1.0", features = ["derive"] }
 ron = "0.8"
 
 # bfup_derive stuff
-syn = { version = "1.0", features = ["full"] }
+syn = { version = "2.0.37", features = ["full"] }
 quote = "1.0"
 proc-macro2 = "1.0"
 proc-macro-error = "1.0"
